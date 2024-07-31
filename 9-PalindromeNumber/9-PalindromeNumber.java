@@ -1,17 +1,19 @@
-class Solution {
-    public boolean isPalindrome(int x) {
-        if (x < 0) {
-            return false;
-        }
-
-        int reverse = 0;
-        int xcopy = x;
-
-        while (x > 0) {
-            reverse = (reverse * 10) + (x % 10);
-            x /= 10;
-        }
-
-        return reverse == xcopy;        
-    }
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int j=1;
+        for(int i=1; i<nums.length; i++){
+            if(nums[i] != nums[i-1]){
+                nums[j]=nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
 }
+[
+[1,1,2]
+[0,0,1,1,1,2,2,3,3,4]
+[1,2]
+[0,1,2,3,4]
+[1,2]
+[0,1,2,3,4]
